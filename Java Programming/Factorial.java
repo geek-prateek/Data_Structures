@@ -1,13 +1,16 @@
-import java.math.BigInteger;
+import java.util.Scanner;
 
 public class Factorial {
-    public static void main(String[] args){
-        int x = 5;
-        BigInteger ans = new BigInteger("1");
-        for(int i=1; i<=x; i++){
-            BigInteger temp = new BigInteger(i + "");
-            ans = ans.multiply(temp);
+    static int factorial(int n){
+        if(n==0){
+            return 1;
         }
-        System.out.println(ans);
+        return n*(factorial(n-1));
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int fact = factorial(n);
+        System.out.println(fact);
     }
 }
