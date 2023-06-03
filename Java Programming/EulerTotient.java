@@ -14,12 +14,9 @@ public class EulerTotient {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int b = sc.nextInt();
-        int a =1;
-        int phi = 0;
         int count = 0;
-        for(int i=a; i<b; i++){
-            phi = findGCD(a,b);
-            if(phi==1){
+        for(int i=1; i<b; i++){
+            if(findGCD(i,b)==1){
                 count++;
             }
         }
