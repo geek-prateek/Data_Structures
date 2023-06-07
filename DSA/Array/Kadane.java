@@ -14,7 +14,7 @@ public class Kadane {
         System.out.println(maxSum);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         int numbers[] ={-2,-3,4,-1,-2,1,5,-3};
         kadane(numbers);
     }
