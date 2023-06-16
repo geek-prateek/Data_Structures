@@ -1,6 +1,7 @@
 package LinkedList;
 
 public class LinkedList {
+
     public static class Node{
         int data;
         Node next;
@@ -163,6 +164,7 @@ public class LinkedList {
         prev.next = prev.next.next;
         return;
     }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.print();
