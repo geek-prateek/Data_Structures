@@ -4,7 +4,7 @@ public class Trie {
     static class Node{
         Node children[] = new Node[26];
         boolean endOfWord = false;
-        Node(){
+        public Node(){
             for(int i=0; i<26; i++){
                 children[i] = null;
             }
@@ -34,6 +34,17 @@ public class Trie {
         }
         return curr.endOfWord == true;
     }
+    public static boolean wordBreak(String key){  //O(L)
+        if(key.length()==0){
+            return true;
+        }
+        for(int i=1; i<=key.length(); i++){  //substring(0,1)
+            if(search(key.substring(0,i)) && wordBreak(key.substring(i))){
+                return true;
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
         String words[] = {"the","a","there","their","any","thee"};
         for(int i=0; i<words.length; i++){
@@ -41,5 +52,9 @@ public class Trie {
         }
         System.out.println(search("thee"));
         System.out.println(search("thor"));
+
+        //word break problem
+        String key = "theanythee";
+        System.out.println("Word Break : "+wordBreak(key));
     }
 }
