@@ -35,7 +35,7 @@ public class ActivitySelection {
                 lastEnd = activity[i][2];
             }
         }
-        System.out.println(maxAct); 
+        System.out.println(maxAct);
         for(int i=0; i<ans.size(); i++){
             System.out.print("A"+ans.get(i)+" ");
         }
